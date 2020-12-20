@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "cookie-signature": "^1.1.0",
     "moment": "^2.29.1",
     "next": "10.0.3",
+    "next-session": "^3.4.0",
     "query-string": "^6.13.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
