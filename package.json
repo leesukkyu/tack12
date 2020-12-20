@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "cookie-signature": "^1.1.0",
+    "material-design-icons": "^3.0.1",
     "moment": "^2.29.1",
     "next": "10.0.3",
     "next-session": "^3.4.0",
