@@ -1,0 +1,40 @@
+.header-wrap {
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px 8px;
+    .header-menu {
+        font-size: 26px;
+    }
+    .header-logo {
+        font-size: 21px;
+    }
+    .header-add {
+        font-size: 26px;
+    }
+}
+
+.category-wrap {
+    .category-box {
+        display: flex;
+        margin: 10px 0 10px 0;
+        .category-item {
+            border-radius: 16px;
+            font-size: 14px;
+            height: 32px;
+            background-color: #ff9800;
+            border-color: #ff9800;
+            color: rgba(0, 0, 0, 0.87);
+            flex: 0 1 80px;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            margin: 0 6px;
+            padding: 0 12px;
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+    }
+}

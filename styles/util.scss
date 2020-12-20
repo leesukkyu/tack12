@@ -1,0 +1,63 @@
+@for $i from 0 through 10 {
+    $unit: 4;
+    $value: ($i * $unit) + px;
+    .ml-#{$i} {
+        margin-left: $value !important;
+    }
+    .mr-#{$i} {
+        margin-right: $value !important;
+    }
+    .mt-#{$i} {
+        margin-top: $value !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: $value !important;
+    }
+    .pl-#{$i} {
+        padding-left: $value !important;
+    }
+    .pr-#{$i} {
+        padding-right: $value !important;
+    }
+    .pt-#{$i} {
+        padding-top: $value !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: $value !important;
+    }
+}
+
+.pa-0 {
+    padding: 0px !important;
+}
+.ma-0 {
+    margin: 0px !important;
+}
+
+.e-1 {
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12) !important;
+}
+.e-2 {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12) !important;
+}
+.e-3 {
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14),
+        0 4px 18px 3px rgba(0, 0, 0, 0.12) !important;
+}
+.e-4 {
+    box-shadow: 0 8px 9px -5px rgba(0, 0, 0, 0.2), 0 15px 22px 2px rgba(0, 0, 0, 0.14),
+        0 6px 28px 5px rgba(0, 0, 0, 0.12) !important;
+}
+.e-5 {
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14),
+        0 8px 38px 7px rgba(0, 0, 0, 0.12) !important;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

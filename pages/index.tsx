@@ -1,24 +1,50 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
 import {applySession} from 'next-session'
 import {sessionConfig, helmetConfig} from '../config'
+import styles from './index.module.scss'
+import MainLayout from '../components/layout/mainLayout'
 
 function Home({views, name}) {
     return (
-        <div className={styles.container}>
+        <MainLayout>
             <Head>
                 <title>{helmetConfig.title}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
+            <div className={styles['header-wrap']}>
+                <div className={styles['header-menu']}>
+                    <i className="material-icons">menu</i>
+                </div>
+                <div className={styles['header-logo']}>택</div>
+                <div className={styles['header-add']}>
+                    <i className="material-icons">add</i>
+                </div>
+            </div>
+
+            <div className={styles['category-wrap']}>
+                <ul className={`${styles['category-box']}`}>
+                    <li className={styles['category-item']}>먹을거</li>
+                    <li className={styles['category-item']}>입을거</li>
+                    <li className={styles['category-item']}>신을거</li>
+                </ul>
+            </div>
+
+            <div className={styles['user-tac-wrap']}>
+                <ul className={styles['user-tac-box']}>
+                    <li className={styles['user-tac-item']}>뱃지1</li>
+                    <li className={styles['user-tac-item']}>뱃지2</li>
+                </ul>
+            </div>
+
+            <main>
                 <i className="material-icons">face</i>
                 로그인 전 {views} {name} {process.env.NEXT_PUBLIC_ANALYTICS_ID}
             </main>
 
-            <footer className={styles.footer}>footer</footer>
-        </div>
+            <footer>footer</footer>
+        </MainLayout>
     )
 }
 
