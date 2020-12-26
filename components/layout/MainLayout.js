@@ -1,8 +1,21 @@
 import React from 'react'
 import styles from './mainLayout.module.scss'
+import classnames from 'classnames'
 
-const mainLayout = ({children}) => {
-    return <div className={styles['main-layout-wrap']}>{children}</div>
+const mainLayout = ({className, children}) => {
+    console.log(className)
+    return (
+        <div
+            id="__main"
+            className={classnames(
+                {
+                    [className]: className,
+                },
+                styles['main-layout-wrap'],
+            )}>
+            {children}
+        </div>
+    )
 }
 
 export default mainLayout

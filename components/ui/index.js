@@ -1,5 +1,3 @@
-import Box from './box/Box'
-import Button from './box/Button'
+import _Button from './button/Button'
 
-export const Box = Box
-export const Button = Button
+export const Button = _Button

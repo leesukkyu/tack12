@@ -1,13 +1,47 @@
+import React, {useState, useEffect, useCallback} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import {applySession} from 'next-session'
 import {sessionConfig, helmetConfig} from '../config'
-import styles from './index.module.scss'
 import MainLayout from '../components/layout/mainLayout'
+import {Button} from '../components/ui'
+import styles from './index.module.scss'
+import classnames from 'classnames'
+import {Transition} from 'react-transition-group'
 
-function Home({views, name}) {
+const duration = 300
+
+const Lnb = ({active}) => {
     return (
-        <MainLayout>
+        <Transition in={active} timeout={duration} unmountOnExit>
+            <div
+                className={classnames({
+                    [styles['lnb-wrap']]: true,
+                    [styles['lnb-animation-fade']]: true,
+                })}>
+                <div className={styles['lnb-box']}>
+                    <Transition in={active} timeout={duration} unmountOnExit>
+                        {(state) => (
+                            <div
+                                className={classnames({
+                                    [styles['lnb']]: true,
+                                    [styles['lnb-animation-slide']]: true,
+                                })}>
+                                lnb
+                            </div>
+                        )}
+                    </Transition>
+                </div>
+            </div>
+        </Transition>
+    )
+}
+
+const Home = ({views, name}) => {
+    const [active, setActive] = useState(false)
+
+    return (
+        <MainLayout className={styles['index-page']}>
             <Head>
                 <title>{helmetConfig.title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -15,7 +49,12 @@ function Home({views, name}) {
 
             <div className={styles['header-wrap']}>
                 <div className={styles['header-menu']}>
-                    <i className="material-icons">menu</i>
+                    <Button
+                        onClick={() => {
+                            setActive(!active)
+                        }}>
+                        <i className="material-icons">menu</i>
+                    </Button>
                 </div>
                 <div className={styles['header-logo']}>택</div>
                 <div className={styles['header-add']}>
@@ -44,6 +83,7 @@ function Home({views, name}) {
             </main>
 
             <footer>footer</footer>
+            <Lnb active={active}></Lnb>
         </MainLayout>
     )
 }

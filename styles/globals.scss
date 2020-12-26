@@ -21,6 +21,9 @@ head,
 html {
     height: 100%;
 }
+body > div[id^='__next'] {
+    background-color: #eee;
+}
 .material-icons {
     font-size: inherit !important;
 }
