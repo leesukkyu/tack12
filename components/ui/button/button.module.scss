@@ -5,4 +5,9 @@
     outline: none;
     cursor: pointer;
     color: inherit;
+
+    &.icon {
+        display: flex;
+        align-items: center;
+    }
 }

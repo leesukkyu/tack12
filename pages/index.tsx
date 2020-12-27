@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useRef} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import {applySession} from 'next-session'
@@ -6,34 +6,50 @@ import {sessionConfig, helmetConfig} from '../config'
 import MainLayout from '../components/layout/mainLayout'
 import {Button} from '../components/ui'
 import styles from './index.module.scss'
-import classnames from 'classnames'
-import {Transition} from 'react-transition-group'
+import {CSSTransition} from 'react-transition-group'
+import Image from 'next/image'
 
-const duration = 300
-
-const Lnb = ({active}) => {
+const Lnb = ({active, setActive}) => {
+    const $lnbWrap = useRef(null)
     return (
-        <Transition in={active} timeout={duration} unmountOnExit>
+        <CSSTransition in={active} timeout={350} classNames="fade" unmountOnExit>
             <div
-                className={classnames({
-                    [styles['lnb-wrap']]: true,
-                    [styles['lnb-animation-fade']]: true,
-                })}>
+                ref={$lnbWrap}
+                className={styles['lnb-wrap']}
+                onClick={(e) => {
+                    if (e.target === $lnbWrap.current) {
+                        setActive(false)
+                    }
+                }}>
                 <div className={styles['lnb-box']}>
-                    <Transition in={active} timeout={duration} unmountOnExit>
-                        {(state) => (
-                            <div
-                                className={classnames({
-                                    [styles['lnb']]: true,
-                                    [styles['lnb-animation-slide']]: true,
-                                })}>
-                                lnb
+                    <CSSTransition in={active} timeout={350} classNames="slide" unmountOnExit>
+                        <div className={styles['lnb']}>
+                            <div className={styles['join-wrap']}>
+                                <div>
+                                    <div className={styles['join-btn-box']}>
+                                        <Button className={styles['join-btn']} title="회원가입" icon>
+                                            <i className="material-icons">person_add</i>
+                                            <span>회원가입</span>
+                                        </Button>
+                                    </div>
+                                    <div>로그인</div>
+                                </div>
+                                <div>
+                                    <Button
+                                        onClick={() => {
+                                            window['Kakao'].Auth.authorize({
+                                                redirectUri: 'http://localhost:3000/oauth/kakao',
+                                            })
+                                        }}>
+                                        <Image src="/kakao_login.png" alt="me" width="183" height="45"></Image>
+                                    </Button>
+                                </div>
                             </div>
-                        )}
-                    </Transition>
+                        </div>
+                    </CSSTransition>
                 </div>
             </div>
-        </Transition>
+        </CSSTransition>
     )
 }
 
@@ -83,7 +99,7 @@ const Home = ({views, name}) => {
             </main>
 
             <footer>footer</footer>
-            <Lnb active={active}></Lnb>
+            <Lnb active={active} setActive={setActive}></Lnb>
         </MainLayout>
     )
 }

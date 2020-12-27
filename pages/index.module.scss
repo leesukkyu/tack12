@@ -69,35 +69,10 @@
                     0 1px 5px 0 rgba(0, 0, 0, 0.12);
             }
         }
-    }
-}
 
-.lnb-animation-slide {
-    & :local {
-        animation: lnb-animation-slide 0.42s ease;
-    }
-}
-
-@keyframes :local(lnb-animation-slide) {
-    0% {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
-}
-
-.lnb-animation-fade {
-    & :local {
-        animation: lnb-animation-fade 0.32s ease;
-    }
-}
-
-@keyframes :local(lnb-animation-fade) {
-    0% {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        .join-wrap {
+            .join-btn {
+            }
+        }
     }
 }
