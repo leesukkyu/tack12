@@ -8,6 +8,7 @@ import React, {useEffect} from 'react'
 import Head from 'next/head'
 
 function MyApp({Component, pageProps}) {
+    console.log(JS_CLIENT_ID)
     useEffect(() => {
         window['Kakao'].init(JS_CLIENT_ID)
         window['Kakao'].isInitialized()

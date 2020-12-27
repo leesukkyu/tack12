@@ -55,7 +55,7 @@ const Lnb = ({active, setActive}) => {
 
 const Home = ({views, name}) => {
     const [active, setActive] = useState(false)
-
+    console.log(process.env.NEXT_PUBLIC_PROCESS)
     return (
         <MainLayout className={styles['index-page']}>
             <Head>
@@ -95,7 +95,7 @@ const Home = ({views, name}) => {
 
             <main>
                 <i className="material-icons">face</i>
-                로그인 전 {views} {name} {process.env.NEXT_PUBLIC_ANALYTICS_ID}
+                로그인 전 {views} {name}
             </main>
 
             <footer>footer</footer>

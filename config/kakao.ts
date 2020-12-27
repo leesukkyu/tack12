@@ -1,0 +1,5 @@
+export const JS_CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_JS_CLIENT_ID
+export const REST_CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_REST_CLIENT_ID
+export const KAKAO_OAUTH_URL = process.env.NEXT_PUBLIC_KAKAO_OAUTH_URL
+export const REDIRECT_URI = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI
+export const CLIENT_SECRET = process.env.NEXT_PUBLIC_KAKAO_CLIENT_SECRET
