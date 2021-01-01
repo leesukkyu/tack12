@@ -16,14 +16,24 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": "",
+    "paths": {
+        "@types/*": ["@types/*"],
+        "@components/*": ["components/*"],
+        "@config/*": ["config/*"],
+        "@lib/*": ["lib/*"],
+        "@pages/*": ["pages/*"],
+        "@public/*": ["public/*"],
+        "@styles/*": ["styles/*"]
+    },
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/api/oauth/logout.js"  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

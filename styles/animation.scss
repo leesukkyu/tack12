@@ -20,23 +20,23 @@
     opacity: 0;
 }
 
-.slide-enter {
+.lnb-slide-enter {
     transform: translateX(-100%);
 }
-.slide-enter-active {
+.lnb-slide-enter-active {
     transform: translateX(0%);
     transition: transform 350ms ease-in-out;
 }
-.slide-enter-done {
+.lnb-slide-enter-done {
     transform: translateX(0%);
 }
-.slide-exit {
+.lnb-slide-exit {
     transform: translateX(0%);
 }
-.slide-exit-active {
+.lnb-slide-exit-active {
     transform: translateX(-100%);
     transition: transform 350ms ease-in-out;
 }
-.slide-exit-done {
+.lnb-slide-exit-done {
     transform: translateX(-100%);
 }

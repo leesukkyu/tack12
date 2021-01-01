@@ -50,7 +50,7 @@
         right: 0px;
         bottom: 0px;
         .lnb-box {
-            width: 568px;
+            max-width: 568px;
             height: 100%;
             margin: auto;
             position: relative;
@@ -61,7 +61,7 @@
             .lnb {
                 position: absolute;
                 left: 0px;
-                right: 0px;
+                right: 50px;
                 top: 0px;
                 bottom: 0px;
                 background-color: rgba(255, 255, 255, 0.95);

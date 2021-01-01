@@ -1,13 +1,12 @@
 import React from 'react'
-import http from '../../../lib/http'
+import http from '@lib/http'
 import qs from 'qs'
-import {KAKAO_OAUTH_URL, KAKAO_OAUTH_USER_URL, REST_CLIENT_ID, REDIRECT_URI, CLIENT_SECRET} from '../../../config/kakao'
+import {KAKAO_OAUTH_URL, KAKAO_OAUTH_USER_URL, REST_CLIENT_ID, REDIRECT_URI, CLIENT_SECRET} from '@config/kakao'
 import {applySession} from 'next-session'
-import {sessionConfig} from '../../../config'
-import {ServerSideProps} from '../../../@types'
+import {sessionConfig} from '@config/index'
+import {ServerSideProps} from '@types'
 
 const index = () => {
-    console.log('xxx')
     return <div>kakao login</div>
 }
 
@@ -46,18 +45,18 @@ export async function getServerSideProps({req, res, query}: ServerSideProps) {
             }
             req.session.user = {
                 id: `kakao_${user.id}`,
-                name: user.nickname,
-                profileImage: user.profileImage,
-                email: user.email,
-                ageRange: user.ageRange,
-                gender: user.gender,
+                name: user.properties.nickname,
+                profileImage: user.properties.profileImage,
+                email: user.kakaoAccount.email,
+                ageRange: user.kakaoAccount.ageRange,
+                gender: user.kakaoAccount.gender,
                 userType: 'kakao',
             }
-            console.log(oauth)
-        } catch (error) {
-            console.log(error)
-        }
+        } catch (error) {}
     }
+
+    res.writeHead(302, {Location: '/'}).end()
+
     return {
         props: {},
     }

@@ -8,7 +8,6 @@ interface ButtonProps
 
 const Button = (props: ButtonProps) => {
     const {children, className, icon, ...rest} = props
-    console.log(icon)
     return (
         <button
             {...rest}

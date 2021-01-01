@@ -3,7 +3,6 @@ import styles from './mainLayout.module.scss'
 import classnames from 'classnames'
 
 const mainLayout = ({className, children}) => {
-    console.log(className)
     return (
         <div
             id="__main"
