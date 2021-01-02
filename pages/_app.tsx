@@ -6,7 +6,7 @@ import 'material-design-icons/iconfont/material-icons.css'
 import {JS_CLIENT_ID} from '@config/kakao'
 import React, {useEffect} from 'react'
 import Head from 'next/head'
-import {RecoilRoot, atom, selector, useRecoilState, useRecoilValue} from 'recoil'
+import {RecoilRoot} from 'recoil'
 
 function MyApp({Component, pageProps}) {
     console.log(JS_CLIENT_ID)

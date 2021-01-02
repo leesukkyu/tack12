@@ -4,12 +4,13 @@ import qs from 'qs'
 import {KAKAO_OAUTH_URL, KAKAO_OAUTH_USER_URL, REST_CLIENT_ID, REDIRECT_URI, CLIENT_SECRET} from '@config/kakao'
 import {applySession} from 'next-session'
 import {sessionConfig} from '@config/index'
-import {ServerSideProps} from '@types'
+import {IServerSideProps} from '@types'
 
 const index = () => {
     return <div>kakao login</div>
 }
 
+// 엑세스 토큰 얻기
 const getAccessToken = (code) => {
     return http.post(
         KAKAO_OAUTH_URL,
@@ -23,6 +24,7 @@ const getAccessToken = (code) => {
     )
 }
 
+// 엑세스 토큰으로 유저정보 가져오기
 const getUserInfo = (accessToken) => {
     return http.get(KAKAO_OAUTH_USER_URL, {
         headers: {
@@ -31,12 +33,13 @@ const getUserInfo = (accessToken) => {
     })
 }
 
-export async function getServerSideProps({req, res, query}: ServerSideProps) {
+export async function getServerSideProps({req, res, query}: IServerSideProps) {
     await applySession(req, res, sessionConfig)
     if (query && query.code) {
         try {
             const {data: oauth} = await getAccessToken(query.code)
             const {data: user} = await getUserInfo(oauth.accessToken)
+            console.log(user)
             req.session.oauth = {
                 accessToken: oauth.accessToken,
                 refreshToken: oauth.refreshToken,
