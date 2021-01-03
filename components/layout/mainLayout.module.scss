@@ -1,6 +1,5 @@
 .main-layout-wrap {
-    min-height: 100%;
-    max-width: 568px;
+    height: 100%;
     margin: 0 auto;
     background-color: #fff;
     color: rgb(34, 34, 34);
@@ -8,4 +7,9 @@
     font-family: -apple-system, BlinkMacSystemFont, helvetica, 'Apple SD Gothic Neo', 나눔고딕, NanumGothic, sans-serif;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .main-layout-box {
+        overflow-x: hidden;
+    }
 }

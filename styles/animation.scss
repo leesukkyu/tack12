@@ -1,42 +1,44 @@
-.fade-enter {
-    opacity: 0;
-}
-.fade-enter-active {
-    opacity: 1;
-    transition: opacity 3500ms;
-}
-.fade-enter-done {
-    opacity: 1;
-}
-.fade-exit {
-    opacity: 1;
-    transition: opacity 3500ms;
-}
-.fade-exit-active {
-    opacity: 0;
-    transition: opacity 3500ms;
-}
-.fade-exit-done {
-    opacity: 0;
-}
+:global {
+    .lnb-fade-enter {
+        opacity: 0;
+    }
+    .lnb-fade-enter-active {
+        opacity: 1;
+        transition: opacity 350ms;
+    }
+    .lnb-fade-enter-done {
+        opacity: 1;
+    }
+    .lnb-fade-exit {
+        opacity: 1;
+        transition: opacity 350ms;
+    }
+    .lnb-fade-exit-active {
+        opacity: 0;
+        transition: opacity 350ms;
+    }
+    .lnb-fade-exit-done {
+        opacity: 0;
+    }
 
-.lnb-slide-enter {
-    transform: translateX(-100%);
-}
-.lnb-slide-enter-active {
-    transform: translateX(0%);
-    transition: transform 350ms ease-in-out;
-}
-.lnb-slide-enter-done {
-    transform: translateX(0%);
-}
-.lnb-slide-exit {
-    transform: translateX(0%);
-}
-.lnb-slide-exit-active {
-    transform: translateX(-100%);
-    transition: transform 350ms ease-in-out;
-}
-.lnb-slide-exit-done {
-    transform: translateX(-100%);
+    .lnb-slide-enter {
+        transform: translateX(-100%);
+    }
+    .lnb-slide-enter-active {
+        transform: translateX(0%);
+        transition: transform 350ms ease-in-out;
+    }
+    .lnb-slide-enter-done {
+        transform: translateX(0%);
+    }
+    .lnb-slide-exit {
+        transform: translateX(0%);
+    }
+    .lnb-slide-exit-active {
+        transform: translateX(-100%);
+        transition: transform 350ms ease-in-out;
+    }
+    .lnb-slide-exit-done {
+        transform: translateX(-100%);
+    }
 }
